@@ -23,10 +23,6 @@
                     <span>🔗</span>
                     View on GitHub
                 </a>
-                <a href="#" class="btn btn-secondary">
-                    <span>🎥</span>
-                    Demo Video
-                </a>
             </div>
         </div>
 
@@ -72,93 +68,13 @@
             </div>
         </div>
 
-        <div class="content-section">
-            <h2 class="section-title">Code Implementation</h2>
-            
-            <h3>Main System Setup</h3>
-            
-
-            <h3>Display Management</h3>
-            <div class="code-snippet" data-language="C++">
-                <pre><code>void displayTime() {
-    currentTime = rtc.now();
-    
-    lcd.setCursor(0, 0);
-    lcd.print("Time: ");
-    
-    if (currentTime.hour() < 10) lcd.print("0");
-    lcd.print(currentTime.hour());
-    lcd.print(":");
-    
-    if (currentTime.minute() < 10) lcd.print("0");
-    lcd.print(currentTime.minute());
-    lcd.print(":");
-    
-    if (currentTime.second() < 10) lcd.print("0");
-    lcd.print(currentTime.second());
-    
-    // Display date on second line
-    lcd.setCursor(0, 1);
-    lcd.print(currentTime.day());
-    lcd.print("/");
-    lcd.print(currentTime.month());
-    lcd.print("/");
-    lcd.print(currentTime.year());
-    
-    // Show alarm status
-    lcd.setCursor(12, 1);
-    if (alarmSet) {
-        lcd.print("ALM");
-    } else {
-        lcd.print("   ");
-    }
-}</code></pre>
-            </div>
-
-            <h3>Alarm System Logic</h3>
-            <div class="code-snippet" data-language="C++">
-                <pre><code>void checkAlarm() {
-    if (!alarmSet) return;
-    
-    currentTime = rtc.now();
-    
-    if (currentTime.hour() == alarmTime.hour() && 
-        currentTime.minute() == alarmTime.minute() && 
-        !alarmTriggered) {
-        
-        alarmTriggered = true;
-        triggerAlarm();
-    }
-    
-    // Reset alarm trigger at start of new minute
-    if (currentTime.second() == 0) {
-        alarmTriggered = false;
-    }
-}
-
-void triggerAlarm() {
-    for (int i = 0; i < 10; i++) {
-        lcd.noBacklight();
-        delay(200);
-        lcd.backlight();
-        delay(200);
-    }
-    
-    lcd.clear();
-    lcd.setCursor(0, 0);
-    lcd.print("ALARM!");
-    lcd.setCursor(0, 1);
-    lcd.print("Press any button");
-}</code></pre>
-            </div>
-        </div>
+   
 
         <div class="content-section">
             <h2 class="section-title">Technical Features</h2>
             
             <div class="tech-stack">
                 <span class="tech-tag">Arduino IDE</span>
-                <span class="tech-tag">C++</span>
                 <span class="tech-tag">I2C Protocol</span>
                 <span class="tech-tag">RTC Libraries</span>
                 <span class="tech-tag">LCD Control</span>
@@ -166,17 +82,17 @@ void triggerAlarm() {
 
             <div class="timeline">
                 <div class="timeline-item">
-                    <div class="timeline-date">Week 1</div>
+                    <div class="timeline-date">Step 1</div>
                     <h3>Hardware Assembly & Basic Display</h3>
                     <p>Connected all components, established I2C communication, and implemented basic time display functionality.</p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">Week 2</div>
+                    <div class="timeline-date">Step 2</div>
                     <h3>User Interface Development</h3>
                     <p>Created intuitive button-based navigation system for time setting and alarm configuration.</p>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-date">Week 3</div>
+                    <div class="timeline-date">Step 3</div>
                     <h3>Alarm System & Testing</h3>
                     <p>Implemented alarm logic, visual/audio feedback, and comprehensive system testing.</p>
                 </div>
@@ -186,8 +102,7 @@ void triggerAlarm() {
         <div class="content-section">
             <h2 class="section-title">System Architecture</h2>
             <div class="image-placeholder">
-                <p>🔌 Circuit diagram and system architecture would be displayed here</p>
-                <p>• Wiring diagrams • Component connections • System flow charts</p>
+                <img src="..\pics\diagram.png" alt="System architecture diagram showing connections between Arduino, RTC, LCD, and buttons">
             </div>
             <p>The TimeKeeper system follows a modular architecture with clear separation between hardware interface, time management, and user interaction layers. The RTC module ensures accurate timekeeping with battery backup, while the LCD provides clear visual feedback to users.</p>
         </div>

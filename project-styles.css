@@ -232,15 +232,21 @@ nav {
 }
 
 .image-placeholder {
-    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
-    border: 2px dashed #cbd5e1;
-    border-radius: 15px;
-    padding: 3rem;
-    text-align: center;
+    border-style: dashed;
+    border-width: 2%; /* Border width is 2% of the container's width */
+    border-color: #cbd5e1;
+    border-radius: 2%;
+    padding: 1%; /* Reduced padding for less white space */
     color: #64748b;
-    margin: 2rem 0;
+    margin: 5%;
+    max-width: 100%;
 }
-
+.image-placeholder img {
+    max-width:100%;
+    height:auto; 
+    display:flex; 
+    max-height: fit-content;
+}
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
