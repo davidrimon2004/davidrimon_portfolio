@@ -71,6 +71,8 @@ nav {
 
 .hero-content {
     animation: fadeInUp 1s ease;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 .hero h1 {
