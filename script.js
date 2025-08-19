@@ -12,6 +12,14 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Project card click handlers
+document.querySelectorAll('.project-card.clickable').forEach(card => {
+    card.addEventListener('click', function() {
+        const projectName = this.getAttribute('data-project');
+        window.location.href = `projects/${projectName}.html`;
+    });
+});
+
 // Fade in animation on scroll
 const observerOptions = {
     threshold: 0.1,

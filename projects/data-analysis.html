@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistical Data Analysis - David Rimon</title>
+    <link rel="stylesheet" href="../project-styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">DR</a>
+            <a href="../index.html" class="back-button">← Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="project-hero">
+            <h1 class="project-title">Statistical Data Analysis Project</h1>
+            <p class="project-subtitle">May 2024 | Probability & Statistics in Action</p>
+            <div class="project-links">
+                <a href="#" class="btn btn-primary">
+                    <span>🔗</span>
+                    View on GitHub
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <span>📊</span>
+                    View Notebook
+                </a>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Project Overview</h2>
+            <p>A comprehensive data analysis project that applies statistical concepts to real-world datasets. This project demonstrates proficiency in Python data science libraries and statistical modeling, showcasing the practical application of probability and statistics in data-driven decision making.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Python Libraries</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Statistical Methods</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Visualizations</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>📈 Data Visualization</h3>
+                    <p>Interactive charts and plots using matplotlib and seaborn to reveal data patterns and trends.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📊 Statistical Analysis</h3>
+                    <p>Implementation of variance, standard deviation, and probability distribution calculations.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔍 Pattern Recognition</h3>
+                    <p>Advanced data exploration techniques to identify correlations and statistical significance.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📋 Comprehensive Reporting</h3>
+                    <p>Detailed statistical reports with actionable insights and recommendations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Code Snippets</h2>
+            
+            <h3>Data Loading & Preprocessing</h3>
+            <div class="code-snippet" data-language="Python">
+                <pre><code>import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy import stats
+
+# Load and preprocess data
+def load_dataset(filepath):
+    df = pd.read_csv(filepath)
+    
+    # Handle missing values
+    df = df.dropna()
+    
+    # Basic statistics
+    print(f"Dataset shape: {df.shape}")
+    print(f"Missing values: {df.isnull().sum().sum()}")
+    
+    return df
+
+# Statistical summary
+def generate_summary(data):
+    summary = {
+        'mean': np.mean(data),
+        'median': np.median(data),
+        'std_dev': np.std(data),
+        'variance': np.var(data)
+    }
+    return summary</code></pre>
+            </div>
+
+            <h3>Probability Distribution Analysis</h3>
+            <div class="code-snippet" data-language="Python">
+                <pre><code>def analyze_distribution(data, column):
+    plt.figure(figsize=(12, 4))
+    
+    # Histogram with density curve
+    plt.subplot(1, 3, 1)
+    plt.hist(data[column], bins=30, density=True, alpha=0.7)
+    plt.title(f'Distribution of {column}')
+    plt.xlabel(column)
+    plt.ylabel('Density')
+    
+    # Q-Q plot for normality test
+    plt.subplot(1, 3, 2)
+    stats.probplot(data[column], dist="norm", plot=plt)
+    plt.title('Q-Q Plot')
+    
+    # Box plot for outlier detection
+    plt.subplot(1, 3, 3)
+    plt.boxplot(data[column])
+    plt.title('Box Plot')
+    
+    plt.tight_layout()
+    plt.show()
+    
+    # Statistical tests
+    shapiro_stat, shapiro_p = stats.shapiro(data[column])
+    print(f"Shapiro-Wilk test p-value: {shapiro_p:.4f}")</code></pre>
+            </div>
+
+            <h3>Advanced Visualization</h3>
+            <div class="code-snippet" data-language="Python">
+                <pre><code>def create_correlation_heatmap(df):
+    plt.figure(figsize=(10, 8))
+    
+    # Calculate correlation matrix
+    correlation_matrix = df.corr()
+    
+    # Create heatmap
+    sns.heatmap(
+        correlation_matrix,
+        annot=True,
+        cmap='coolwarm',
+        center=0,
+        square=True,
+        fmt='.2f'
+    )
+    
+    plt.title('Feature Correlation Matrix')
+    plt.tight_layout()
+    plt.show()
+    
+    return correlation_matrix</code></pre>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Technical Stack</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Matplotlib</span>
+                <span class="tech-tag">Seaborn</span>
+                <span class="tech-tag">SciPy</span>
+                <span class="tech-tag">Jupyter</span>
+            </div>
+            
+            <p>This project leverages Python's powerful data science ecosystem to perform comprehensive statistical analysis. The combination of pandas for data manipulation, matplotlib/seaborn for visualization, and scipy for advanced statistical testing creates a robust analytical framework.</p>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Results & Insights</h2>
+            <div class="image-placeholder">
+                <p>📊 Data visualization charts and statistical plots would be displayed here</p>
+                <p>• Correlation matrices • Distribution plots • Statistical test results</p>
+            </div>
+            <p>The analysis revealed significant patterns in the dataset, with strong correlations between key variables and clear probability distributions that informed data-driven recommendations. The project successfully demonstrated the practical application of statistical theory to real-world problem solving.</p>
+        </div>
+    </div>
+</body>
+</html>

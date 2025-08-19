@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cairo2Capital - David Rimon</title>
+    <link rel="stylesheet" href="../project-styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">DR</a>
+            <a href="../index.html" class="back-button">← Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="project-hero">
+            <h1 class="project-title">Cairo2Capital Transportation System</h1>
+            <p class="project-subtitle">Oct 2024 - May 2025 | Featured at Deep Minds 4</p>
+            <div class="project-links">
+                <a href="#" class="btn btn-primary">
+                    <span>🔗</span>
+                    View on GitHub
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <span>🌐</span>
+                    Live Demo
+                </a>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Project Overview</h2>
+            <p>Cairo2Capital is a comprehensive transportation management system that evolved from a simple map display into a sophisticated platform with full OOP implementation. The project showcases the journey from basic web development to advanced system architecture.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Development Phases</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">Technologies Used</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">8</span>
+                    <span class="stat-label">Months Duration</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Development Timeline</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Phase 1 (Oct - Dec 2024)</div>
+                    <h3>Foundation & Core Features</h3>
+                    <p>Built the initial website with transportation map displays, station name input functionality, and printable receipt generation. Focus on user experience and basic functionality.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Phase 2 (Jan - May 2025)</div>
+                    <h3>OOP Enhancement & Advanced Features</h3>
+                    <p>Restructured the entire codebase using Object-Oriented Programming principles. Added ticket pricing calculations, enhanced user interface, and improved system architecture.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🗺️ Interactive Maps</h3>
+                    <p>Real-time transportation route visualization with station-to-station mapping functionality.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💰 Smart Pricing</h3>
+                    <p>Dynamic ticket price calculation based on distance, route complexity, and station types.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎫 Digital Receipts</h3>
+                    <p>Printable receipt generation with journey details, pricing breakdown, and timestamps.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🏗️ OOP Architecture</h3>
+                    <p>Clean, maintainable codebase following object-oriented programming principles.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Code Snippets</h2>
+            
+            <h3>Database Connection (PHP)</h3>
+            <div class="code-snippet" data-language="PHP">
+                <pre><code><?php
+class DatabaseConnection {
+    private $host = 'localhost';
+    private $dbname = 'cairo2capital';
+    private $username = 'root';
+    private $password = '';
+    private $pdo;
+
+    public function connect() {
+        try {
+            $this->pdo = new PDO(
+                "mysql:host={$this->host};dbname={$this->dbname}",
+                $this->username,
+                $this->password
+            );
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            return $this->pdo;
+        } catch (PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+        }
+    }
+}
+?></code></pre>
+            </div>
+
+            <h3>Station Class Implementation</h3>
+            <div class="code-snippet" data-language="JavaScript">
+                <pre><code>class Station {
+    constructor(name, coordinates, type) {
+        this.name = name;
+        this.coordinates = coordinates;
+        this.type = type; // 'metro', 'bus', 'train'
+    }
+
+    calculateDistance(targetStation) {
+        const dx = this.coordinates.x - targetStation.coordinates.x;
+        const dy = this.coordinates.y - targetStation.coordinates.y;
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    getTicketPrice(targetStation) {
+        const distance = this.calculateDistance(targetStation);
+        const basePrice = 5; // EGP
+        const pricePerKm = 0.5;
+        return basePrice + (distance * pricePerKm);
+    }
+}</code></pre>
+            </div>
+
+            <h3>Receipt Generation</h3>
+            <div class="code-snippet" data-language="CSS">
+                <pre><code>.receipt {
+    width: 300px;
+    background: white;
+    padding: 20px;
+    border: 2px dashed #ccc;
+    font-family: monospace;
+    margin: 20px auto;
+}
+
+.receipt-header {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.journey-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+@media print {
+    .receipt {
+        border: none;
+        box-shadow: none;
+    }
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Technical Implementation</h2>
+            
+            <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">JavaScript ES6</span>
+                <span class="tech-tag">PHP 7+</span>
+                <span class="tech-tag">MySQL</span>
+            </div>
+
+            <p>The Cairo2Capital project demonstrates a complete full-stack web application development cycle. The frontend utilizes modern HTML5 and CSS3 features for responsive design, while JavaScript handles dynamic user interactions and real-time calculations.</p>
+            
+            <p>The backend is powered by PHP with MySQL database integration, following MVC architecture patterns. The second phase transformation to OOP principles showcased advanced software engineering concepts and code maintainability practices.</p>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Recognition & Impact</h2>
+            <div class="image-placeholder">
+                <p>🏆 Featured at Faculty Scientific Day - Deep Minds 4</p>
+                <p>Project presentation photos and demo screenshots would go here</p>
+            </div>
+            <p>This project was selected for presentation at MSA University's Faculty Scientific Day, demonstrating its innovation and technical excellence. The project serves as a practical solution for transportation planning in Cairo's complex transit system.</p>
+        </div>
+    </div>
+</body>
+</html>

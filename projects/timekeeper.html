@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeKeeper Clock - David Rimon</title>
+    <link rel="stylesheet" href="../project-styles.css">
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">DR</a>
+            <a href="../index.html" class="back-button">← Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="project-hero">
+            <h1 class="project-title">TimeKeeper - Real-Time Clock</h1>
+            <p class="project-subtitle">May 2024 | Featured at Deep Minds 3</p>
+            <div class="project-links">
+                <a href="#" class="btn btn-primary">
+                    <span>🔗</span>
+                    View on GitHub
+                </a>
+                <a href="#" class="btn btn-secondary">
+                    <span>🎥</span>
+                    Demo Video
+                </a>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Project Overview</h2>
+            <p>TimeKeeper is a sophisticated real-time clock system built with Arduino, featuring alarm functionality and an intuitive user interface. This project demonstrates hardware-software integration, embedded systems programming, and user experience design in the IoT space.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Hardware Components</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Real-Time Operation</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">5</span>
+                    <span class="stat-label">User Functions</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Hardware Components</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🔧 Arduino Uno</h3>
+                    <p>Main microcontroller handling all system logic, user input processing, and device coordination.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📟 LCD i2c Display</h3>
+                    <p>16x2 character display showing time, date, and alarm status with I2C communication protocol.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>⏰ RTC DS3231 Module</h3>
+                    <p>High-precision real-time clock with battery backup for accurate timekeeping even when powered off.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔘 Push Button Interface</h3>
+                    <p>Multiple tactile switches for time setting, alarm configuration, and system navigation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Code Implementation</h2>
+            
+            <h3>Main System Setup</h3>
+            <div class="code-snippet" data-language="C++">
+                <pre><code>#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+#include <RTClib.h>
+
+// Hardware initialization
+LiquidCrystal_I2C lcd(0x27, 16, 2);
+RTC_DS3231 rtc;
+
+// Button pins
+const int SET_BTN = 2;
+const int UP_BTN = 3;
+const int DOWN_BTN = 4;
+const int ALARM_BTN = 5;
+
+// System variables
+DateTime currentTime;
+DateTime alarmTime;
+bool alarmSet = false;
+bool alarmTriggered = false;
+
+void setup() {
+    Serial.begin(9600);
+    
+    // Initialize LCD
+    lcd.init();
+    lcd.backlight();
+    
+    // Initialize RTC
+    if (!rtc.begin()) {
+        lcd.print("RTC Error!");
+        while(1);
+    }
+    
+    // Initialize buttons
+    pinMode(SET_BTN, INPUT_PULLUP);
+    pinMode(UP_BTN, INPUT_PULLUP);
+    pinMode(DOWN_BTN, INPUT_PULLUP);
+    pinMode(ALARM_BTN, INPUT_PULLUP);
+}</code></pre>
+            </div>
+
+            <h3>Display Management</h3>
+            <div class="code-snippet" data-language="C++">
+                <pre><code>void displayTime() {
+    currentTime = rtc.now();
+    
+    lcd.setCursor(0, 0);
+    lcd.print("Time: ");
+    
+    if (currentTime.hour() < 10) lcd.print("0");
+    lcd.print(currentTime.hour());
+    lcd.print(":");
+    
+    if (currentTime.minute() < 10) lcd.print("0");
+    lcd.print(currentTime.minute());
+    lcd.print(":");
+    
+    if (currentTime.second() < 10) lcd.print("0");
+    lcd.print(currentTime.second());
+    
+    // Display date on second line
+    lcd.setCursor(0, 1);
+    lcd.print(currentTime.day());
+    lcd.print("/");
+    lcd.print(currentTime.month());
+    lcd.print("/");
+    lcd.print(currentTime.year());
+    
+    // Show alarm status
+    lcd.setCursor(12, 1);
+    if (alarmSet) {
+        lcd.print("ALM");
+    } else {
+        lcd.print("   ");
+    }
+}</code></pre>
+            </div>
+
+            <h3>Alarm System Logic</h3>
+            <div class="code-snippet" data-language="C++">
+                <pre><code>void checkAlarm() {
+    if (!alarmSet) return;
+    
+    currentTime = rtc.now();
+    
+    if (currentTime.hour() == alarmTime.hour() && 
+        currentTime.minute() == alarmTime.minute() && 
+        !alarmTriggered) {
+        
+        alarmTriggered = true;
+        triggerAlarm();
+    }
+    
+    // Reset alarm trigger at start of new minute
+    if (currentTime.second() == 0) {
+        alarmTriggered = false;
+    }
+}
+
+void triggerAlarm() {
+    for (int i = 0; i < 10; i++) {
+        lcd.noBacklight();
+        delay(200);
+        lcd.backlight();
+        delay(200);
+    }
+    
+    lcd.clear();
+    lcd.setCursor(0, 0);
+    lcd.print("ALARM!");
+    lcd.setCursor(0, 1);
+    lcd.print("Press any button");
+}</code></pre>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Technical Features</h2>
+            
+            <div class="tech-stack">
+                <span class="tech-tag">Arduino IDE</span>
+                <span class="tech-tag">C++</span>
+                <span class="tech-tag">I2C Protocol</span>
+                <span class="tech-tag">RTC Libraries</span>
+                <span class="tech-tag">LCD Control</span>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Week 1</div>
+                    <h3>Hardware Assembly & Basic Display</h3>
+                    <p>Connected all components, established I2C communication, and implemented basic time display functionality.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Week 2</div>
+                    <h3>User Interface Development</h3>
+                    <p>Created intuitive button-based navigation system for time setting and alarm configuration.</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">Week 3</div>
+                    <h3>Alarm System & Testing</h3>
+                    <p>Implemented alarm logic, visual/audio feedback, and comprehensive system testing.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">System Architecture</h2>
+            <div class="image-placeholder">
+                <p>🔌 Circuit diagram and system architecture would be displayed here</p>
+                <p>• Wiring diagrams • Component connections • System flow charts</p>
+            </div>
+            <p>The TimeKeeper system follows a modular architecture with clear separation between hardware interface, time management, and user interaction layers. The RTC module ensures accurate timekeeping with battery backup, while the LCD provides clear visual feedback to users.</p>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Recognition & Learning</h2>
+            <div class="image-placeholder">
+                <p>🏆 Featured at Faculty Scientific Day - Deep Minds 3</p>
+                <p>Project demonstration photos and circuit images would go here</p>
+            </div>
+            <p>Selected for presentation at MSA University's Faculty Scientific Day, this project demonstrated excellence in embedded systems design and practical engineering problem-solving. The experience provided valuable insights into hardware-software integration and real-time system constraints.</p>
+        </div>
+    </div>
+</body>
+</html>
