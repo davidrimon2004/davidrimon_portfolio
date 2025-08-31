@@ -98,6 +98,7 @@ nav {
 .btn-primary {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
+    margin-top: 2%;
 }
 
 .btn-secondary {
@@ -240,6 +241,7 @@ nav {
     color: #64748b;
     margin: 5%;
     max-width: 100%;
+    text-align: center;
 }
 .image-placeholder img {
     max-width:100%;
