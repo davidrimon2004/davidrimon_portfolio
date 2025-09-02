@@ -15,8 +15,17 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Project card click handlers
 document.querySelectorAll('.project-card.clickable').forEach(card => {
     card.addEventListener('click', function() {
-        const projectName = this.getAttribute('data-project');
-        window.location.href = `projects/${projectName}.html`;
+        // Check if it's a certificate card
+        if (this.classList.contains('certificate-card')) {
+            const certUrl = this.getAttribute('data-cert-url');
+            if (certUrl) {
+                window.open(certUrl, '_blank');
+            }
+        } else {
+            // Regular project page
+            const projectName = this.getAttribute('data-project');
+            window.location.href = `projects/${projectName}.html`;
+        }
     });
 });
 
