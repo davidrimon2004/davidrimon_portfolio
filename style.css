@@ -71,8 +71,6 @@ nav {
 
 .hero-content {
     animation: fadeInUp 1s ease;
-    margin-left: 2%;
-    margin-right: 2%;
 }
 
 .hero h1 {
@@ -298,6 +296,33 @@ nav {
 }
 
 .project-card.clickable:hover .view-project {
+    opacity: 1;
+}
+
+.view-certificate {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.certificate-card:hover .view-certificate {
+    opacity: 1;
+}
+
+.certificate-card::after {
+    content: '🏆';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.certificate-card:hover::after {
     opacity: 1;
 }
 
