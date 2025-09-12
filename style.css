@@ -342,8 +342,8 @@ nav {
 }
 
 .contact {
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
+    background: rgb(135, 102, 238);
+    color:  rgb(135, 102, 238);
     text-align: center;
 }
 
@@ -353,15 +353,17 @@ nav {
     gap: 2rem;
     margin-top: 2rem;
     flex-wrap: wrap;
+    
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: white;
+    color:  rgb(135, 102, 238);
     text-decoration: none;
     transition: opacity 0.3s ease;
+    
 }
 
 .contact-item:hover {
