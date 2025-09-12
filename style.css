@@ -413,3 +413,9 @@ nav {
         display: none;
     }
 }
+
+@media (min-width: 900px) {
+    .activities-section {
+        flex-wrap: nowrap; /* Force cards in a single row on wide screens */
+    }
+}
