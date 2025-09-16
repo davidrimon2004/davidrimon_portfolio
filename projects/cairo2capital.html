@@ -224,35 +224,36 @@
         </div>
     </div>
     <script>
-       document.addEventListener('DOMContentLoaded', function () {
-    const track = document.getElementById('sliderTrack');
-    const dots = document.querySelectorAll('.slider-dot');
-    const totalSlides = document.querySelectorAll('.slider-slide').length;
-    let currentSlideIndex = 0;
+let track, dots, totalSlides, currentSlideIndex = 0;
 
-    function showSlide(index) {
-        if (index >= totalSlides) {
-            currentSlideIndex = 0;
-        } else if (index < 0) {
-            currentSlideIndex = totalSlides - 1;
-        } else {
-            currentSlideIndex = index;
-        }
-        const translateX = -currentSlideIndex * (100 / totalSlides);
-        track.style.transform = `translateX(${translateX}%)`;
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentSlideIndex);
-        });
+function showSlide(index) {
+    if (index >= totalSlides) {
+        currentSlideIndex = 0;
+    } else if (index < 0) {
+        currentSlideIndex = totalSlides - 1;
+    } else {
+        currentSlideIndex = index;
     }
+    const translateX = -currentSlideIndex * (100 / totalSlides);
+    track.style.transform = `translateX(${translateX}%)`;
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlideIndex);
+    });
+}
 
-    window.changeSlide = function (direction) {
-        showSlide(currentSlideIndex + direction);
-    };
+function changeSlide(direction) {
+    showSlide(currentSlideIndex + direction);
+}
 
-    window.currentSlide = function (index) {
-        showSlide(index - 1);
-    };
+function currentSlide(index) {
+    showSlide(index - 1);
+}
 
+document.addEventListener('DOMContentLoaded', function () {
+    track = document.getElementById('sliderTrack');
+    dots = document.querySelectorAll('.slider-dot');
+    totalSlides = document.querySelectorAll('.slider-slide').length;
+    currentSlideIndex = 0;
     showSlide(0);
 
     // Touch/swipe support
