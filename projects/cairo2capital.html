@@ -104,7 +104,96 @@
             </div>
         </div>
 
-   
+        <!-- NEW: Project Screenshots Section -->
+        <div class="content-section">
+            <h2 class="section-title">Project Screenshots</h2>
+            
+            <!-- Photo Slider -->
+            <div class="photo-slider">
+                <div class="slider-container">
+                    <div class="slider-track" id="sliderTrack">
+                        <!-- Slide 1: Home Page -->
+                        <div class="slider-slide">
+                            <img src="../pics/C2C(2).jpg" alt="Cairo2Capital Home Page">
+                            <div class="slide-placeholder">
+                                <h4>🏠 Home Page</h4>
+                                <p>Welcome interface with navigation to all system features</p>
+                            </div>
+                            <div class="slide-caption">
+                                <h4>Home Page Interface</h4>
+                                <p>Clean, modern landing page with intuitive navigation to booking, maps, and user features.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2: Interactive Map -->
+                        <div class="slider-slide">
+                            <img src="../pics/C2C(3).jpg" alt="Interactive Transportation Map">
+                            <div class="slide-placeholder">
+                                <h4>🗺️ Interactive Map</h4>
+                                <p>Transportation routes visualization between Cairo and New Capital</p>
+                            </div>
+                            <div class="slide-caption">
+                                <h4>Interactive Map System</h4>
+                                <p>Real-time route visualization showing all available transportation options and stations.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3: Booking System -->
+                        <div class="slider-slide">
+                            <img src="../pics/C2C(1).jpg" alt="Ticket Booking Interface">
+                            <div class="slide-placeholder">
+                                <h4>🎫 Booking System</h4>
+                                <p>User-friendly ticket booking with station selection</p>
+                            </div>
+                            <div class="slide-caption">
+                                <h4>Ticket Booking Interface</h4>
+                                <p>Streamlined booking process with dropdown menus for origin/destination selection.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4: Pricing Calculator -->
+                        <div class="slider-slide">
+                            <img src="../pics/C2C(4).png" alt="Dynamic Pricing System">
+                            <div class="slide-placeholder">
+                                <h4>💰 Pricing System</h4>
+                                <p>Dynamic pricing based on distance and route complexity</p>
+                            </div>
+                            <div class="slide-caption">
+                                <h4>Smart Pricing Calculator</h4>
+                                <p>Real-time price calculation considering distance, time, and transportation type.</p>
+                            </div>
+                        </div>
+
+                        <!-- Slide 5: Receipt Generation -->
+                        <div class="slider-slide">
+                            <img src="../pics/C2C(5).png" alt="Receipt Generation System">
+                            
+                            <div class="slide-placeholder">
+                                <h4>👤 User Profile</h4>
+                                <p>Manage personal information and view booking history</p>
+                            </div>
+                            <div class="slide-caption">
+                                <h4>User Profile Management</h4>
+                                <p>Comprehensive user profile with editable information, booking history overview, and points system.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <button class="slider-nav prev" onclick="changeSlide(-1)">‹</button>
+                    <button class="slider-nav next" onclick="changeSlide(1)">›</button>
+                </div>
+
+                <!-- Dots Indicator -->
+                <div class="slider-dots">
+                    <span class="slider-dot active" onclick="currentSlide(1)"></span>
+                    <span class="slider-dot" onclick="currentSlide(2)"></span>
+                    <span class="slider-dot" onclick="currentSlide(3)"></span>
+                    <span class="slider-dot" onclick="currentSlide(4)"></span>
+                    <span class="slider-dot" onclick="currentSlide(5)"></span>
+                </div>
+            </div>
+        </div>
 
         <div class="content-section">
             <h2 class="section-title">Technical Implementation</h2>
@@ -126,7 +215,7 @@
             <h2 class="section-title">Recognition & Impact</h2>
             <div class="image-placeholder">
                 <p>🏆 Featured at Faculty Scientific Day - Deep Minds 4</p>
-                <a href="/media/C2C.pdf" class="btn btn-primary" target="_blank">
+                <a href="../media/C2C.pdf" class="btn btn-primary" target="_blank">
                     <span>📄</span>
                     View the Poster presented in the Faculty Scientific Day
                 </a>
@@ -134,5 +223,7 @@
             <p>This project was selected for presentation at MSA University's Faculty Scientific Day, demonstrating its innovation and technical excellence. The project serves as a practical solution for transportation planning in Cairo's complex transit system.</p>
         </div>
     </div>
+       <script src="../project-scripts.js"></script>
+       <script src="../script.js"></script>
 </body>
 </html>
