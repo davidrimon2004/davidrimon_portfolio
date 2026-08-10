@@ -1,0 +1,92 @@
+David Rimon Youssef
+Downtown, Cairo | +20 1278222463 | davidhalim2004@gmail.com | https://www.linkedin.com/in/david-rimon-b520a2216/
+
+PROFESSIONAL SUMMARY
+Computer Science undergrad (GPA 3.58) with hands-on experience building production-grade ML systems, from
+weakly supervised video anomaly detection using I3D and CNN-Transformer architectures, to XGBoost-powered
+retail forecasting pipelines on real-world datasets. Proficient in Python, scikit-learn, and end-to-end ML
+workflows including feature engineering, model benchmarking, and performance evaluation (MAE, R2, AUC).
+Seeking an ML/AI/Data Science internship where he can apply deep learning and statistical modelling to real
+business problems, with a track record of leading team projects from data ingestion to deployment-ready models.
+
+EDUCATION
+Modern Science and Arts University (MSA), 6th of October, Giza
+Bachelor of Computer Science — Expected Graduation: July 2027
+- Major in Computer Science
+- Cumulative GPA: 3.58
+- Relevant Achievements: Two course projects presented at the Faculty Scientific Day (Deep Minds)
+
+Digital Egyptian Pioneers Initiative (Hybrid) — Track: AI & Data Science — Jul 2025 - Dec 2025
+A 6-month course offered by the Ministry of Communication and Information Technology (MCIT), covering
+Data Science and Machine Learning, plus freelancing skills, soft skills, and business English.
+
+PROJECTS
+
+1) Surveillance Anomaly Detection (Mar 2026 - May 2026, Group Project)
+- Built an end-to-end weakly supervised anomaly detection pipeline on the UCF-Crime dataset (1,900
+  untrimmed videos), training and evaluating using only video-level labels with a pretrained 3D two-stream
+  CNN as the backbone.
+- Built a custom image processing pipeline from scratch (no high-level libraries), including frame sampling,
+  resizing, filtering, and background subtraction to enable efficient spatio-temporal feature extraction.
+- Engineered foreground-focused representations using motion-based masking and background modelling,
+  reducing environmental noise and improving anomaly separability.
+- The proposed image processing pipeline achieved a more stable model that avoided overfitting, compared
+  to a baseline using only the pretrained 3D two-stream CNN with a 3D ResNet backbone and minimal image
+  processing.
+- A research paper derived from this project discussing the effects of the image processing techniques used
+  is currently under peer review at the CESS 2026 Conference.
+- Tools: Python, PyTorch, 3D CNN, Computer Vision.
+
+2) Retail Sales Prediction System (Aug 2025 - Dec 2025, Group Project, Team Leader)
+- Built an end-to-end XGBoost sales forecasting pipeline on 58.5 million rows of retail data, achieving an
+  average MAE of 0.36 and R2 of 0.88 across all 10 store segments.
+- Cleaned and reshaped data (wide to long format) and engineered features such as lag variables, event
+  indicators, pricing flags, and calendar effects.
+- Trained store-specific XGBoost models with hyperparameter tuning, reducing inter-store prediction
+  variance and improving generalisation across 10 distinct store distributions.
+- Used GitHub and Kaggle versioning for version control.
+- Led the group project as Team Leader.
+- Tools: Python, XGBoost, pandas, NumPy.
+
+3) Cairo2Capital Transportation System (Oct 2024 - May 2025, Group Project)
+- Developed a full-stack transit fare system in two iterative phases, progressing from a functional MVP to a
+  production-ready app.
+- Phase 1: a website showing maps of different transportation modes, letting users enter station names, and
+  generating a printable receipt. This phase was nominated at the Faculty Scientific Day (Deep Minds 4).
+- Phase 2: Refactored the codebase using OOP design principles (inheritance, encapsulation, polymorphism),
+  reducing code duplication and enabling modular feature expansion. Added ticket pricing calculations.
+- Tools: HTML, CSS, JavaScript, PHP, MySQL.
+- GitHub: https://github.com/marc-zaki/oose-c2c
+
+SKILLS
+Technical Skills: Python, PyTorch, TensorFlow, scikit-learn, XGBoost, pandas, NumPy, matplotlib, SQL, Git, OOP, C++
+Web/Other: HTML, CSS, JavaScript, PHP, MySQL, MongoDB
+Soft Skills: Presentation skills, English writing, working within a group (teamwork)
+Language Skills: Arabic (Native), English (Fluent)
+
+CERTIFICATIONS
+- AWS Educate: Introduction to Cloud 101
+- AWS Educate: Getting Started with Storage
+- Introduction to MongoDB (MaharaTech - ITIMooca)
+
+INTERNSHIPS
+David has not listed any formal internships on his CV yet. His closest equivalent experience is the Digital
+Egyptian Pioneers Initiative (a 6-month hybrid MCIT/E-Youth program, Jul 2025 - Dec 2025, AI & Data Science
+track) and his hands-on group projects listed above. If asked about internships, mention this honestly rather
+than inventing one.
+
+ACTIVITIES & LEADERSHIP
+- Hult Prize MSA — Deputy Campus Director, Dec 2025 - Present, 6th of October, Giza.
+  Assisted in leading campus operations, coordination, and execution of Hult Prize events. Supported
+  strategy, team management, and stakeholder communication.
+- ENACTUS MSA — R&D Member, Sep 2025 - Feb 2026, 6th of October, Giza.
+  Supported the final project through research and critical thinking. Brainstormed project challenges
+  related to production, cost, and sustainability.
+- Lebaladna Ramadan Activities — Volunteer, March 2025, 6th of October, Giza.
+  Participated in packing and preparing Ramadan bags for families in need.
+
+CONTACT
+Email: davidhalim2004@gmail.com
+Phone: +20 1278222463
+LinkedIn: https://www.linkedin.com/in/david-rimon-b520a2216/
+Location: Downtown, Cairo, Egypt

@@ -56,3 +56,122 @@ window.addEventListener('scroll', () => {
         header.style.background = 'rgba(6, 12, 28, 0.85)';
     }
 });
+
+const chatToggle = document.getElementById('chat-toggle');
+const chatPanel = document.getElementById('chat-panel');
+const chatClose = document.getElementById('chat-close');
+const chatForm = document.getElementById('chat-form');
+const chatMessages = document.getElementById('chat-messages');
+const chatInput = document.getElementById('chat-input');
+
+chatToggle.addEventListener('click', () => {
+    chatPanel.classList.toggle('open');
+    chatPanel.setAttribute('aria-hidden', chatPanel.classList.contains('open') ? 'false' : 'true');
+    if (chatPanel.classList.contains('open')) {
+        chatInput.focus();
+    }
+});
+
+chatClose.addEventListener('click', () => {
+    chatPanel.classList.remove('open');
+    chatPanel.setAttribute('aria-hidden', 'true');
+});
+
+const portfolioText = document.body.innerText.toLowerCase();
+
+function addMessage(text, sender) {
+    const message = document.createElement('div');
+    message.className = `chat-message ${sender}`;
+    message.textContent = text;
+    chatMessages.appendChild(message);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function findRelevantAnswer(question) {
+    const normalizedQuestion = question.toLowerCase();
+    const answers = [];
+
+    if (/projects|worked on|project(s)?/.test(normalizedQuestion)) {
+        answers.push(
+            'This portfolio highlights projects like Surveillance Anomaly Detection, Retail Sales Prediction System, and Cairo2Capital Transportation System.'
+        );
+    }
+
+    if (/technolog(y|ies)|python|pytorch|tensorflow|xgboost|sql|mysql|html|css|javascript|php/.test(normalizedQuestion)) {
+        answers.push(
+            'Technologies mentioned include Python, PyTorch, TensorFlow, scikit-learn, XGBoost, pandas, HTML, CSS, JavaScript, PHP, and MySQL.'
+        );
+    }
+
+    if (/internship|internships|interned/.test(normalizedQuestion)) {
+        answers.push(
+            'The portfolio does not list a specific internship employer, but it highlights project-based experience and certifications linked to AI, data science, and cloud technologies.'
+        );
+    }
+
+    if (/certificate|certificates|credential/.test(normalizedQuestion)) {
+        answers.push(
+            'Certificates include Digital Egyptian Pioneers Initiative, AWS Cloud Foundations, and Introduction to MongoDB.'
+        );
+    }
+
+    if (/surveillance anomaly detection|anomaly detection/.test(normalizedQuestion)) {
+        answers.push(
+            'Surveillance Anomaly Detection is a weakly supervised pipeline on the UCF-Crime dataset using a pretrained 3D two-stream CNN backbone, with a custom image processing pipeline and a paper under review at CESS 2026.'
+        );
+    }
+
+    if (/retail sales prediction|retail prediction|xgboost/.test(normalizedQuestion)) {
+        answers.push(
+            'Retail Sales Prediction System is an end-to-end XGBoost forecasting pipeline built on 58.5M rows of retail data, achieving MAE 0.36 and R² 0.88 across store segments.'
+        );
+    }
+
+    if (/cairo2capital|transportation|ticket/.test(normalizedQuestion)) {
+        answers.push(
+            'Cairo2Capital is a transportation website with OOP logic for ticket pricing, receipts, and a multi-phase system showcased at Deep Minds 4.'
+        );
+    }
+
+    if (answers.length === 0) {
+        return 'I am happy to help with questions about projects, skills, courses, certificates, education, and experience from this portfolio.';
+    }
+
+    return answers.join(' ');
+}
+
+chatForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const question = chatInput.value.trim();
+    if (!question) return;
+
+    addMessage(question, 'user');
+    chatInput.value = '';
+
+    const answer = findRelevantAnswer(question);
+    setTimeout(() => addMessage(answer, 'bot'), 250);
+});
+async function sendQuestionToBot(userQuestion) {
+  // Replace with your deployed Vercel domain
+  const VERCEL_API_URL = "https://your-app-name.vercel.app/api/chat";
+
+  try {
+    const response = await fetch(VERCEL_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ message: userQuestion })
+    });
+
+    if (!response.ok) {
+      throw new Error("API request failed");
+    }
+
+    const data = await response.json();
+    return data.answer;
+  } catch (error) {
+    console.error("Error:", error);
+    return "Sorry, I am having trouble connecting right now. Please email David directly at davidhalim2004@gmail.com.";
+  }
+}

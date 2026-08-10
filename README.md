@@ -35,6 +35,27 @@ This portfolio highlights:
 2. Open `index.html` in your browser.
 3. Or serve locally with a simple web server for the best experience.
 
+## 🤖 AI Portfolio Chatbot
+This repository includes a local Python chatbot that answers questions using only the portfolio/CV information stored in `portfolio_context.txt`.
+
+### How it works
+- Paste your full CV, projects, experience, certificates, skills, internships, and other professional details into `portfolio_context.txt`.
+- Run the bot locally with Python.
+- It uses free open-source models and local embeddings, so no paid API key is required.
+
+### Run the chatbot
+```bash
+pip install -r requirements.txt
+python assistant.py
+```
+
+### Example questions
+- What projects have you worked on?
+- What technologies do you know?
+- Where did you complete your internships?
+- What certificates do you have?
+- Tell me about a specific project.
+
 ## 📬 Contact
 - Email: davidhalim2004@gmail.com
 - LinkedIn: [David Rimon](https://www.linkedin.com/in/david-rimon-b520a2216/)

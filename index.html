@@ -300,6 +300,23 @@
         </div>
     </section>
 
+    <div class="chat-widget" id="chat-widget">
+        <button class="chat-toggle" id="chat-toggle" type="button">Ask David</button>
+        <div class="chat-panel" id="chat-panel" aria-hidden="true">
+            <div class="chat-header">
+                <div class="chat-title">Portfolio Assistant</div>
+                <button class="chat-close" id="chat-close" type="button">×</button>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+                <div class="chat-message bot">Hi! Ask me questions about projects, technologies, certificates, skills, education, or experience from this portfolio.</div>
+            </div>
+            <form class="chat-form" id="chat-form">
+                <input id="chat-input" type="text" placeholder="Ask about my work or skills..." autocomplete="off" />
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
