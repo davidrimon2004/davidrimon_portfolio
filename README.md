@@ -3,7 +3,7 @@
 A modern personal portfolio website for David Rimon, showcasing his work as a Computer Science student focused on AI, machine learning, and data science.
 
 ## 🚀 Live Demo
-[View Portfolio](https://davidrimon2004.github.io/davidrimon_portfolio)
+[View Portfolio][https://davidrimon2004.github.io/davidrimon_portfolio]
 
 ## 🧭 About
 This portfolio highlights:
