@@ -88,6 +88,69 @@
         </div>
 
         <div class="content-section">
+            <h2 class="section-title">Pipeline Architecture</h2>
+            <div class="pipeline-steps">
+                <div class="pipeline-step">
+                    <div class="pipeline-step-header">
+                        <div class="pipeline-step-icon">✂️</div>
+                        <h3 class="pipeline-step-title">Temporal Subsampling</h3>
+                        <span class="pipeline-step-number">01</span>
+                    </div>
+                    <p>This step involves selecting a subset of frames from each video to reduce redundancy. The video was downsampled from 30 fps to 5 fps using a fixed sampling ratio.</p>
+                </div>
+                <div class="pipeline-step">
+                    <div class="pipeline-step-header">
+                        <div class="pipeline-step-icon">👾</div>
+                        <h3 class="pipeline-step-title">Bilinear Interpolation</h3>
+                        <span class="pipeline-step-number">02</span>
+                    </div>
+                    <p>Applied bilinear interpolation to resize frames while maintaining spatial relationships, ensuring consistent input dimensions of 244 x 244 pixels for the subsequent processing steps.</p>
+                </div>
+                <div class="pipeline-step">
+                    <div class="pipeline-step-header">
+                        <div class="pipeline-step-icon">👁️</div>
+                        <h3 class="pipeline-step-title">Grayscale Conversion</h3>
+                        <span class="pipeline-step-number">03</span>
+                    </div>
+                    <p>Converted frames to grayscale to reduce computational complexity and focus on intensity variations for anomaly detection.</p>
+                </div>
+                <div class="pipeline-step">
+                    <div class="pipeline-step-header">
+                        <div class="pipeline-step-icon">📊</div>
+                        <h3 class="pipeline-step-title">Histogram Equalization</h3>
+                        <span class="pipeline-step-number">04</span>
+                    </div>
+                    <p>Enhanced image contrast through histogram equalization, improving the visibility of anomalies in the processed frames.</p>
+                </div>
+                <div class="pipeline-step">
+                    <div class="pipeline-step-header">
+                        <div class="pipeline-step-icon">📎</div>
+                        <h3 class="pipeline-step-title">Gaussian Smoothing</h3>
+                        <span class="pipeline-step-number">05</span>
+                    </div>
+                    <p>Applied Gaussian smoothing to reduce noise and enhance the overall quality of the processed frames.</p>
+                </div>
+                <div class="pipeline-step">
+                    <div class="pipeline-step-header">
+                        <div class="pipeline-step-icon">🕳️</div>
+                        <h3 class="pipeline-step-title">Background Subtraction</h3>
+                        <span class="pipeline-step-number">06</span>
+                    </div>
+                    <p>Implemented background subtraction to isolate moving objects and identify potential anomalies in the video sequence.</p>
+                </div>
+                <div class="pipeline-step">
+                    <div class="pipeline-step-header">
+                        <div class="pipeline-step-icon">🤖</div>
+                        <h3 class="pipeline-step-title">Morphological Operations</h3>
+                        <span class="pipeline-step-number">07</span>
+                    </div>
+                    <p>Applied morphological operations to refine the foreground masks and remove noise, improving the accuracy of anomaly detection.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="content-section">
             <h2 class="section-title">Technical Stack</h2>
             <div class="tech-stack">
                 <span class="tech-tag">Python</span>

@@ -51,8 +51,8 @@ document.querySelectorAll('.fade-in').forEach(el => {
 window.addEventListener('scroll', () => {
     const header = document.querySelector('header');
     if (window.scrollY > 100) {
-        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.background = 'rgba(6, 12, 28, 0.97)';
     } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.background = 'rgba(6, 12, 28, 0.85)';
     }
 });
