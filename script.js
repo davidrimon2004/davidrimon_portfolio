@@ -140,7 +140,45 @@ function findRelevantAnswer(question) {
     return answers.join(' ');
 }
 
-chatForm.addEventListener('submit', (event) => {
+async function sendQuestionToBot(userQuestion) {
+    const localAnswer = findRelevantAnswer(userQuestion);
+    if (localAnswer && !localAnswer.includes('I am happy to help')) {
+        return localAnswer;
+    }
+
+    const endpoints = [
+        '/api/chat',
+        'http://127.0.0.1:8000/api/chat',
+        'https://your-app-name.vercel.app/api/chat'
+    ];
+
+    for (const endpoint of endpoints) {
+        try {
+            const response = await fetch(endpoint, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: userQuestion })
+            });
+
+            if (!response.ok) {
+                continue;
+            }
+
+            const text = await response.text();
+            if (text) {
+                return text.trim();
+            }
+        } catch (error) {
+            console.warn(`Chat endpoint failed: ${endpoint}`, error);
+        }
+    }
+
+    return 'Sorry, I am having trouble connecting right now. Please email David directly at davidhalim2004@gmail.com.';
+}
+
+chatForm.addEventListener('submit', async (event) => {
     event.preventDefault();
     const question = chatInput.value.trim();
     if (!question) return;
@@ -148,30 +186,13 @@ chatForm.addEventListener('submit', (event) => {
     addMessage(question, 'user');
     chatInput.value = '';
 
-    const answer = findRelevantAnswer(question);
-    setTimeout(() => addMessage(answer, 'bot'), 250);
+    const loadingMessage = document.createElement('div');
+    loadingMessage.className = 'chat-message bot';
+    loadingMessage.textContent = 'Thinking...';
+    chatMessages.appendChild(loadingMessage);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    const answer = await sendQuestionToBot(question);
+    loadingMessage.textContent = answer;
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 });
-async function sendQuestionToBot(userQuestion) {
-  // Replace with your deployed Vercel domain
-  const VERCEL_API_URL = "https://your-app-name.vercel.app/api/chat";
-
-  try {
-    const response = await fetch(VERCEL_API_URL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ message: userQuestion })
-    });
-
-    if (!response.ok) {
-      throw new Error("API request failed");
-    }
-
-    const data = await response.json();
-    return data.answer;
-  } catch (error) {
-    console.error("Error:", error);
-    return "Sorry, I am having trouble connecting right now. Please email David directly at davidhalim2004@gmail.com.";
-  }
-}
