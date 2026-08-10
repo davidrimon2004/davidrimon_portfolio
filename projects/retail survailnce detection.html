@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retail Sales Prediction System - David Rimon</title>
+    <link rel="stylesheet" href="../project-styles.css">
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MLR4DV8V');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D2GXBTJWZN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D2GXBTJWZN');
+</script>
+<body>
+        <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLR4DV8V"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">DR</a>
+            <a href="../index.html" class="back-button">← Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="project-hero">
+            <h1 class="project-title">Retail Sales Prediction System</h1>
+            <p class="project-subtitle">Aug 2025 - Dec 2025 | Group Project — Team Leader</p>
+            <div class="project-links">
+                <a href="#" class="btn btn-primary" target="_blank">
+                    <span>🔗</span>
+                    View on GitHub
+                </a>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Project Overview</h2>
+            <p>An end-to-end XGBoost sales forecasting pipeline built on 58.5 million rows of real-world retail data. As team leader, I directed the project from data ingestion through to deployment-ready, store-specific forecasting models, achieving strong predictive performance across all 10 store segments.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">58.5M</span>
+                    <span class="stat-label">Rows of Retail Data</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">0.36</span>
+                    <span class="stat-label">Average MAE</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">0.88</span>
+                    <span class="stat-label">Average R²</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10</span>
+                    <span class="stat-label">Store Segments</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🧹 Data Cleaning & Reshaping</h3>
+                    <p>Cleaned and reshaped raw retail data from wide to long format to prepare it for large-scale feature engineering and modelling.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🛠️ Feature Engineering</h3>
+                    <p>Engineered lag variables, event indicators, pricing flags, and calendar effects to capture the seasonal and promotional dynamics driving retail demand.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🌲 Store-Specific XGBoost Models</h3>
+                    <p>Trained and hyperparameter-tuned individual XGBoost models per store segment, reducing inter-store prediction variance and improving generalisation.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>👥 Team Leadership</h3>
+                    <p>Led the group project end-to-end, coordinating data ingestion, modelling, and evaluation workstreams across the team.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Technical Stack</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">XGBoost</span>
+                <span class="tech-tag">pandas</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Feature Engineering</span>
+            </div>
+
+            <p>The project leveraged pandas and NumPy for large-scale data wrangling on tens of millions of rows, with XGBoost powering the store-specific gradient-boosted forecasting models. GitHub and Kaggle versions were used for version control throughout development.</p>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Results & Insights</h2>
+            <div class="image-placeholder">
+                <p>📊 Forecast accuracy charts and per-store performance breakdowns would be displayed here</p>
+                <p>• MAE / R² by store segment • Feature importance • Forecast vs. actual sales</p>
+            </div>
+            <p>The store-specific modelling approach achieved an average MAE of 0.36 and R² of 0.88 across all 10 store segments, demonstrating that tailoring models to individual store distributions meaningfully improves forecast accuracy over a single generalized model.</p>
+        </div>
+    </div>
+</body>
+</html>
