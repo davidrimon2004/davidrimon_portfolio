@@ -1,24 +1,49 @@
 # David Rimon Portfolio
 
-A sleek, modern portfolio website showcasing my journey as a Computer Science student at MSA University.
+A modern personal portfolio website for David Rimon, showcasing his work as a Computer Science student focused on AI, machine learning, and data science.
 
 ## 🚀 Live Demo
 [View Portfolio](https://davidrimon2004.github.io/davidrimon_portfolio)
 
+## 🧭 About
+This portfolio highlights:
+- academic achievements and education
+- certification programs and professional courses
+- ML/AI and data science projects
+- technical skills and extracurricular activities
+- contact information and links for collaboration
+
 ## 🛠️ Built With
 - HTML5
-- CSS3 (with modern features like backdrop-filter)
+- CSS3 (including modern styling like backdrop-filter and responsive layouts)
 - Vanilla JavaScript
-- Responsive Design
+- GitHub Pages for deployment
 
-## 📱 Features
-- Smooth scrolling navigation
-- Fade-in animations
-- Mobile responsive
-- Modern gradient design
-- Interactive project cards
+## ✨ Key Features
+- Responsive layout for desktop and mobile
+- Smooth scroll navigation
+- Animated section reveal effects
+- Clickable project cards for deeper browsing
+- Profile photo and visual personal branding
+- Consistent dark AI/CS-themed design
+
+## 📌 Getting Started
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/davidrimon2004/davidrimon_portfolio.git
+   ```
+2. Open `index.html` in your browser.
+3. Or serve locally with a simple web server for the best experience.
 
 ## 📬 Contact
 - Email: davidhalim2004@gmail.com
 - LinkedIn: [David Rimon](https://www.linkedin.com/in/david-rimon-b520a2216/)
 - Location: Cairo, Egypt
+
+## 📁 Project Structure
+- `index.html` — main portfolio landing page
+- `style.css` — global styling and theme
+- `script.js` — page interactions and scroll behavior
+- `projects/` — individual project detail pages
+- `pics/` — profile photo and project media
+- `project-styles.css` — project page styling
