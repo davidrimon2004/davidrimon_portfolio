@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +36,7 @@
                 <li><a href="#courses">Courses</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#activities">Activities</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -46,7 +45,8 @@
     <section class="hero">
         <div class="hero-content">
             <h1>David Rimon Youssef</h1>
-            <p>Computer Science Student | Future Tech Innovator</p>
+            <p>Computer Science Student | Aspiring ML/AI &amp; Data Science Engineer</p>
+            <p>Computer Science undergrad with hands-on experience building production-grade ML systems — from weakly supervised video anomaly detection using I3D and CNN-Transformer architectures, to XGBoost-powered retail forecasting pipelines on real-world datasets. Seeking an ML/AI/Data Science internship where I can apply deep learning and statistical modelling to real business problems.</p>
             <a href="#about" class="cta-button">Discover My Journey</a>
         </div>
     </section>
@@ -55,13 +55,12 @@
         <div class="container">
             <h2 class="section-title fade-in">About Me</h2>
             <div class="about-grid fade-in">
-                <div class="about-image" style="width: 180px; height: 180px; border-radius: 50%; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f5f5f5;">
-                    <img src="pics/me.jpg" alt="David Rimon Youssef" class="about-img" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
+                <div class="about-image">DR</div>
                 <div class="about-text">
-                    <p>I'm a passionate Computer Science student at MSA University. Currently pursuing my Bachelor's degree with a strong GPA of 3.57, I'm on track to graduate in July 2027.</p>
-                    <p>My journey in tech has been marked by recognition at the Faculty Scientific Day, where two of my projects were showcased. I'm particularly drawn to AI, data science, and web development, constantly seeking to blend creativity with technical excellence.</p>
-                    <p>Based in the vibrant city of Cairo, I'm fluent in both Arabic and English, ready to collaborate on exciting projects that make a real impact.</p>
+                    <p>I'm a passionate Computer Science student at MSA University. Currently pursuing my Bachelor's degree with a strong GPA of 3.58, I'm on track to graduate in July 2027.</p>
+                    <p>I'm proficient in Python, PyTorch, TensorFlow, and scikit-learn, with end-to-end ML workflow experience covering feature engineering, model benchmarking, and performance evaluation (MAE, R², AUC). I've led team projects from data ingestion all the way to deployment-ready models, including a retail forecasting pipeline processing 58.5 million rows of data.</p>
+                    <p>My journey in tech has been marked by recognition at the Faculty Scientific Day, where two of my projects were showcased, and a research paper derived from my anomaly detection work currently under peer review at the CESS 2026 Conference.</p>
+                    <p>Based in Downtown Cairo, I'm fluent in both Arabic and English, ready to collaborate on exciting projects that make a real impact.</p>
                 </div>
             </div>
         </div>
@@ -74,7 +73,7 @@
                 <h3>Bachelor of Computer Science</h3>
                 <p><strong>Modern Science and Arts University (MSA)</strong> | 6th of October, Giza</p>
                 <p>Expected Graduation: July 2027</p>
-                <p>Cumulative GPA: 3.57</p>
+                <p>Cumulative GPA: 3.58</p>
                 <p><strong>Notable Achievement:</strong> Two course projects presented at Faculty Scientific Day (Deep Minds)</p>
             </div>
         </div>
@@ -87,9 +86,9 @@
                 <div class="project-card clickable certificate-card">
                     <div class="project-content">
                         <h3 class="project-title">Digital Egyptian Pioneers Initiative</h3>
-                        <p class="project-meta">MCIT & E-Youth | Expected Jan 2026 | AI & Data Science Track</p>
+                        <p class="project-meta">MCIT & E-Youth | Jul 2025 - Dec 2025 | AI & Data Science Track</p>
                         <p class="project-description">
-                            An intensive 200-hour hybrid program by the Ministry of Communication and Information Technology, covering advanced data science, machine learning, freelancing skills, and business English development.
+                            A 6-month hybrid program by the Ministry of Communication and Information Technology, covering advanced data science, machine learning, freelancing skills, and business English development.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">Data Science</span>
@@ -106,7 +105,7 @@
                         <h3 class="project-title">AWS Cloud Foundations</h3>
                         <p class="project-meta">AWS Educate | Completed</p>
                         <p class="project-description">
-                            Comprehensive introduction to cloud computing fundamentals and storage solutions, building essential knowledge for modern cloud-based development and deployment.
+                            Comprehensive introduction to cloud computing fundamentals and storage solutions (Introduction to Cloud 101 and Getting Started with Storage), building essential knowledge for modern cloud-based development and deployment.
                         </p>
                         <div class="project-tech">
                             <span class="tech-tag">AWS Cloud</span>
@@ -139,6 +138,40 @@
         <div class="container">
             <h2 class="section-title fade-in">Featured Projects</h2>
             <div class="projects-grid fade-in">
+                <div class="project-card clickable" data-project="surveillance-anomaly-detection">
+                    <div class="project-content">
+                        <h3 class="project-title">Surveillance Anomaly Detection</h3>
+                        <p class="project-meta">Mar 2026 - May 2026 | Group Project</p>
+                        <p class="project-description">
+                            Built an end-to-end weakly supervised anomaly detection pipeline on the UCF-Crime dataset (1,900 untrimmed videos) using a pretrained 3D two-stream CNN backbone, with a custom-built image processing pipeline that improved model stability over the baseline. A resulting research paper is currently under peer review at CESS 2026.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">PyTorch</span>
+                            <span class="tech-tag">3D CNN</span>
+                            <span class="tech-tag">Computer Vision</span>
+                        </div>
+                        <div class="view-project">Click to view details →</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable" data-project="retail-sales-prediction">
+                    <div class="project-content">
+                        <h3 class="project-title">Retail Sales Prediction System</h3>
+                        <p class="project-meta">Aug 2025 - Dec 2025 | Group Project | Team Leader</p>
+                        <p class="project-description">
+                            Led the development of an end-to-end XGBoost sales forecasting pipeline on 58.5M rows of retail data, achieving an average MAE of 0.36 and R² of 0.88 across all 10 store segments, with store-specific model tuning to reduce inter-store prediction variance.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">pandas</span>
+                            <span class="tech-tag">Feature Engineering</span>
+                        </div>
+                        <div class="view-project">Click to view details →</div>
+                    </div>
+                </div>
+
                 <div class="project-card clickable" data-project="cairo2capital">
                     <div class="project-content">
                         <h3 class="project-title">Cairo2Capital Transportation System</h3>
@@ -156,40 +189,6 @@
                         <div class="view-project">Click to view details →</div>
                     </div>
                 </div>
-                
-                <div class="project-card clickable" data-project="data-analysis">
-                    <div class="project-content">
-                        <h3 class="project-title">Statistical Data Analysis Project</h3>
-                        <p class="project-meta">May 2024 | Group Project</p>
-                        <p class="project-description">
-                            Applied statistical concepts to real-world data analysis, implementing probability distributions, variance calculations, and data visualizations to extract meaningful insights from complex datasets.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">Matplotlib</span>
-                            <span class="tech-tag">Seaborn</span>
-                        </div>
-                        <div class="view-project">Click to view details →</div>
-                    </div>
-                </div>
-                
-                <div class="project-card clickable" data-project="timekeeper">
-                    <div class="project-content">
-                        <h3 class="project-title">TimeKeeper - Real-Time Clock</h3>
-                        <p class="project-meta">May 2024 | Group Project | Featured at Deep Minds 3</p>
-                        <p class="project-description">
-                            Designed and built a sophisticated real-time clock system with alarm functionality, showcasing hardware-software integration and user interface design principles.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Arduino IDE</span>
-                            <span class="tech-tag">Arduino Uno</span>
-                            <span class="tech-tag">LCD i2c</span>
-                            <span class="tech-tag">RTC DS 3231</span>
-                        </div>
-                        <div class="view-project">Click to view details →</div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -201,17 +200,30 @@
                 <div class="skill-category">
                     <h3>Programming Languages</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">C++</span>
                         <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C++</span>
                         <span class="skill-tag">JavaScript</span>
                         <span class="skill-tag">PHP</span>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Technologies</h3>
+                    <h3>ML & Data Science</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">scikit-learn</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">matplotlib</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Web & Database</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">HTML</span>
                         <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">SQL</span>
                         <span class="skill-tag">MySQL</span>
                         <span class="skill-tag">Git</span>
                     </div>
@@ -240,23 +252,23 @@
 
     <section id="activities" class="section">
         <div class="container">
-            <h2 class="section-title fade-in">Offered Services</h2>
+            <h2 class="section-title fade-in">Community Involvement</h2>
             <div class="activities-section fade-in">
                 <div class="activity-card">
-                    <h3>Data Analysis and Visualization</h3>
-                    <p> <strong>Rate:</strong> 15$/hour</p>
-                    <p>Utilize advanced data analysis techniques and visualization tools to extract insights from complex datasets, aiding decision-making processes for various stakeholders.</p>
+                    <h3>Deputy Campus Director - Hult Prize MSA</h3>
+                    <p><strong>Dec 2025 - Present</strong> | 6th of October, Giza</p>
+                    <p>Assisting in leading campus operations, coordination, and execution of Hult Prize events, while supporting strategy, team management, and stakeholder communication.</p>
                 </div>
-                 <div class="activity-card">
-                    <h3>Data Cleaning and Preprocessing</h3>
-                    <p> <strong>Rate:</strong> 10$/hour</p>
-                    <p>Implement data cleaning and preprocessing pipelines to ensure high-quality input for machine learning models, enhancing their performance and reliability.</p>
+                <div class="activity-card" style="margin-top: 2rem;">
+                    <h3>R&D Member - ENACTUS MSA</h3>
+                    <p><strong>Sep 2025 - Feb 2026</strong> | 6th of October, Giza</p>
+                    <p>Supported the final project through research and critical thinking, brainstorming project challenges related to production, cost, and sustainability.</p>
                 </div>
-                 <div class="activity-card">
-                    <h3>Model Development</h3>
-                    <p> <strong>Rate:</strong> 300-600$/project</p>
-                    <p>Design and implement machine learning models tailored to specific business needs, ensuring optimal performance and accuracy.</p>
-                 </div>
+                <div class="activity-card" style="margin-top: 2rem;">
+                    <h3>Volunteer at Lebaladna Ramadan Activities</h3>
+                    <p><strong>March 2025</strong> | 6th of October, Giza</p>
+                    <p>Contributed to community welfare by volunteering in packing and preparing Ramadan bags for families in need, demonstrating commitment to social responsibility and community service.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -280,7 +292,7 @@
                 </a>
                 <div class="contact-item">
                     <span>📍</span>
-                    <span>Cairo, Egypt</span>
+                    <span>Downtown, Cairo, Egypt</span>
                 </div>
             </div>
         </div>

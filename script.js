@@ -56,5 +56,3 @@ window.addEventListener('scroll', () => {
         header.style.background = 'rgba(255, 255, 255, 0.95)';
     }
 });
-
-// Photo Slider for C2C page

@@ -71,8 +71,6 @@ nav {
 
 .hero-content {
     animation: fadeInUp 1s ease;
-    margin-left: 3%;
-    margin-right: 3%;
 }
 
 .hero h1 {
@@ -330,10 +328,6 @@ nav {
 
 .activities-section {
     text-align: center;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
 }
 
 .activity-card {
@@ -341,16 +335,13 @@ nav {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    max-width: 350px;
-    margin: 0;
-    position: relative;
-    overflow: hidden;
-    flex: 1 1 300px;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contact {
-    background: rgb(135, 102, 238);
-    color:  rgb(135, 102, 238);
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
     text-align: center;
 }
 
@@ -360,17 +351,15 @@ nav {
     gap: 2rem;
     margin-top: 2rem;
     flex-wrap: wrap;
-    
 }
 
 .contact-item {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color:  rgb(135, 102, 238);
+    color: white;
     text-decoration: none;
     transition: opacity 0.3s ease;
-    
 }
 
 .contact-item:hover {
@@ -411,11 +400,5 @@ nav {
     
     .nav-links {
         display: none;
-    }
-}
-
-@media (min-width: 900px) {
-    .activities-section {
-        flex-wrap: nowrap; /* Force cards in a single row on wide screens */
     }
 }

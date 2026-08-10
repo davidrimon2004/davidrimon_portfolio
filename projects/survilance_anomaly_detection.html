@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surveillance Anomaly Detection - David Rimon</title>
+    <link rel="stylesheet" href="../project-styles.css">
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MLR4DV8V');</script>
+    <!-- End Google Tag Manager -->
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D2GXBTJWZN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-D2GXBTJWZN');
+</script>
+<body>
+        <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MLR4DV8V"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <header>
+        <nav class="container">
+            <a href="../index.html" class="logo">DR</a>
+            <a href="../index.html" class="back-button">← Back to Portfolio</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="project-hero">
+            <h1 class="project-title">Surveillance Anomaly Detection</h1>
+            <p class="project-subtitle">Mar 2026 - May 2026 | Weakly Supervised Video Anomaly Detection</p>
+            <div class="project-links">
+                <a href="#" class="btn btn-secondary" target="_blank">
+                    <span>📄</span>
+                    Paper Under Review (CESS 2026)
+                </a>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Project Overview</h2>
+            <p>An end-to-end weakly supervised anomaly detection pipeline built on the UCF-Crime dataset, comprising 1,900 untrimmed surveillance videos. The system was trained and evaluated using only video-level labels, leveraging a pretrained 3D two-stream CNN as its backbone to learn spatio-temporal representations of normal and anomalous behavior.</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number">1,900</span>
+                    <span class="stat-label">Untrimmed Videos</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">3D</span>
+                    <span class="stat-label">Two-Stream CNN Backbone</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">Paper Under Peer Review</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Key Features</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>🎥 Weakly Supervised Learning</h3>
+                    <p>Trained and evaluated the pipeline using only video-level labels, avoiding the need for costly frame-level annotations.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🧩 Custom Image Processing Pipeline</h3>
+                    <p>Built entirely from scratch without high-level libraries — including frame sampling, resizing, filtering, and background subtraction — to enable efficient spatio-temporal feature extraction.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 Foreground-Focused Representations</h3>
+                    <p>Engineered motion-based masking and background modelling to reduce environmental noise and improve anomaly separability.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📉 Improved Model Stability</h3>
+                    <p>The proposed image processing pipeline produced a more stable model that avoided overfitting, in contrast to a baseline relying only on the pretrained 3D two-stream CNN with a 3D ResNet backbone and minimal image processing.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Technical Stack</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">PyTorch</span>
+                <span class="tech-tag">3D CNN</span>
+                <span class="tech-tag">Computer Vision</span>
+                <span class="tech-tag">Spatio-Temporal Modelling</span>
+            </div>
+
+            <p>The pipeline combines a custom, from-scratch image processing stage with a pretrained 3D two-stream convolutional backbone, bridging classical computer vision techniques with deep learning-based video understanding for anomaly detection.</p>
+        </div>
+
+        <div class="content-section">
+            <h2 class="section-title">Results & Recognition</h2>
+            <div class="image-placeholder">
+                <p>📊 Model comparison charts and anomaly detection results would be displayed here</p>
+                <p>• Baseline vs. proposed pipeline • Overfitting analysis • Anomaly separability</p>
+            </div>
+            <p>A research paper derived from this project, discussing the effects of the image processing techniques used, was submitted and is currently under peer review at the CESS 2026 Conference.</p>
+        </div>
+    </div>
+</body>
+</html>
