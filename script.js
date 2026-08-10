@@ -141,15 +141,8 @@ function findRelevantAnswer(question) {
 }
 
 async function sendQuestionToBot(userQuestion) {
-    const localAnswer = findRelevantAnswer(userQuestion);
-    if (localAnswer && !localAnswer.includes('I am happy to help')) {
-        return localAnswer;
-    }
-
     const endpoints = [
-        '/api/chat',
-        'http://127.0.0.1:8000/api/chat',
-        'https://your-project-name.vercel.app/api/chat'
+        'https://davidrimon-portfolio.vercel.app/api/chat' 
     ];
 
     for (const endpoint of endpoints) {
@@ -167,12 +160,18 @@ async function sendQuestionToBot(userQuestion) {
             }
 
             const text = await response.text();
-            if (text) {
+            if (text && text.trim()) {
                 return text.trim();
             }
         } catch (error) {
             console.warn(`Chat endpoint failed: ${endpoint}`, error);
         }
+    }
+
+    // Only reached if the real AI backend could not be reached at all.
+    const localAnswer = findRelevantAnswer(userQuestion);
+    if (localAnswer) {
+        return localAnswer;
     }
 
     return 'Sorry, I am having trouble connecting right now. Please email David directly at davidhalim2004@gmail.com.';
