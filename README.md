@@ -3,7 +3,7 @@
 A sleek, modern portfolio website showcasing my journey as a Computer Science student at MSA University.
 
 ## 🚀 Live Demo
-[View Portfolio]([https://davidrimon2004.github.io/davidrimon_portfolio)
+[View Portfolio]([https://davidrimon2004.github.io/davidrimon_portfolio])
 
 ## 🛠️ Built With
 - HTML5
