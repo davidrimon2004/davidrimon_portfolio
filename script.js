@@ -149,7 +149,7 @@ async function sendQuestionToBot(userQuestion) {
     const endpoints = [
         '/api/chat',
         'http://127.0.0.1:8000/api/chat',
-        'https://your-app-name.vercel.app/api/chat'
+        'https://your-project-name.vercel.app/api/chat'
     ];
 
     for (const endpoint of endpoints) {
